@@ -1,5 +1,22 @@
 export const adminRoutes = [
   {
+    path: '/contract',
+    children: [
+      {
+        path: 'add',
+        title: '新增合同'
+      },
+      {
+        path: 'edit',
+        title: '编辑合同'
+      },
+      {
+        path: 'add',
+        title: '查看合同'
+      },
+    ]
+  },
+  {
     path: '/clipboard',
     children: [
       {

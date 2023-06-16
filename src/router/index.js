@@ -80,6 +80,44 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/contract',
+    component: Layout,
+    name: '合同管理',
+    meta: {
+      title: '合同管理',
+      icon: 'icon'
+    },
+    children: [
+      {
+        path: 'add',
+        component: () => import('@/views/contract/Add'),
+        name: '新增合同',
+        meta: {
+          title: '新增合同',
+          icon: 'icon'
+        }
+      },
+      {
+        path: 'edit',
+        component: () => import('@/views/contract/Edit'),
+        name: '编辑合同',
+        meta: {
+          title: '编辑合同',
+          icon: 'icon'
+        }
+      },
+      {
+        path: 'detail',
+        component: () => import('@/views/contract/Detail'),
+        name: '查看合同',
+        meta: {
+          title: '查看合同',
+          icon: 'icon'
+        }
+      },
+    ]
+  },
+  {
     path: '/clipboard',
     component: Layout,
     name: 'Clipboard',

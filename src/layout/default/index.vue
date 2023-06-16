@@ -36,9 +36,9 @@ const menuWidth = computed(() =>
   .sidebar {
     z-index: 1001;
     position: fixed;
-    top: 20px;
+    top: 0;
+    left: 0;
     bottom: 0;
-    left: 20px;
     height: calc(100vh - 40px);
     overflow: hidden;
     transition: width 0.28s;
