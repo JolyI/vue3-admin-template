@@ -278,7 +278,7 @@ export const NaturePaymentOptions: OptionItems[] = [
     value: '0',
   },
 ]
-// 合同内部（外部）
+// 合同-内/外部
 export const ContractSideOptions: OptionItems[] = [
   {
     label: '内部',

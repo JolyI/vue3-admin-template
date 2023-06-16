@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="formRef" :model="form" :rules="rules">
+  <el-form ref="formRef" :model="form" :rules="rules" label-width="120px" size="medium">
     <base-info v-model="form" />
     <el-form-item>
       <el-button type="primary" @click="onSubmit(formRef)">提交</el-button>
@@ -63,7 +63,7 @@ const form = ref<FormTypeProps>({
     备注: '',
   }
 })
-const onSubmit = (formEl: FormInstance) => {
+const onSubmit = async (formEl: FormInstance) => {
   formEl.validate().then((isValid) => {
     console.log('isValid', isValid)
     if (isValid) {
@@ -73,6 +73,8 @@ const onSubmit = (formEl: FormInstance) => {
     } else {
       ElMessage.error('请完善必填项')
     }
+  }).catch(e => {
+    ElMessage.error('请完善必填项')
   })
 }
 
@@ -80,4 +82,12 @@ const onSubmit = (formEl: FormInstance) => {
 </script>
 <style lang="scss" scoped>
 @import url('../../index.scss');
+
+:deep {
+
+  .el-select.el-select--medium,
+  .el-date-editor.el-input--medium {
+    flex: 1
+  }
+}
 </style>
