@@ -1,6 +1,8 @@
 <template>
-  <el-form ref="formRef" :model="form" :rules="rules" label-width="120px" size="medium">
+  <el-form ref="formRef" :model="form" :rules="rules" label-width="120px" size="default">
     <base-info v-model="form" />
+    <financial-info v-model="form" />
+    <ledger-detail-info @change-ledger-detail-info="changeRow" />
     <el-form-item>
       <el-button type="primary" @click="onSubmit(formRef)">提交</el-button>
     </el-form-item>
@@ -8,13 +10,16 @@
 </template>
 <script setup lang="ts">
 import { defineComponent, ref } from 'vue'
-import BaseInfo from '../baseInfo/index.vue'
 import { ElMessage, FormInstance } from 'element-plus';
 import { FormTypeProps } from '../../interface';
+import BaseInfo from '../baseInfo/index.vue'
+import FinancialInfo from '../financialInfo/index.vue'
+import LedgerDetailInfo from '../ledgerDetailInfo/index.vue'
 import rules from '../../rules'
 
 defineComponent({
-  'BaseInfo': BaseInfo
+  'BaseInfo': BaseInfo,
+  'FinancialInfo': FinancialInfo,
 })
 const formRef = ref<FormInstance>()
 const form = ref<FormTypeProps>({
@@ -64,10 +69,11 @@ const form = ref<FormTypeProps>({
   }
 })
 const onSubmit = async (formEl: FormInstance) => {
+  console.log('表单数据', form.value)
   formEl.validate().then((isValid) => {
     console.log('isValid', isValid)
     if (isValid) {
-      console.log('form.modelValue', form.value)
+      console.log('表单数据', form.value)
       const params = { ...form.value }
       console.log('params', params)
     } else {
@@ -78,7 +84,11 @@ const onSubmit = async (formEl: FormInstance) => {
   })
 }
 
-
+const changeRow = ({ key, data }) => {
+  console.log('key', key)
+  console.log('data', data)
+  form.value[key] = data
+}
 </script>
 <style lang="scss" scoped>
 @import url('../../index.scss');
@@ -86,8 +96,13 @@ const onSubmit = async (formEl: FormInstance) => {
 :deep {
 
   .el-select.el-select--medium,
-  .el-date-editor.el-input--medium {
+  .el-date-editor.el-input--medium,
+  .el-form-item__content .el-input-number {
     flex: 1
+  }
+
+  .el-collapse-item__header {
+    font-size: 16px;
   }
 }
 </style>

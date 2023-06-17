@@ -5,12 +5,12 @@
         <el-row :gutter="15">
           <el-col :span="6">
             <el-form-item label="合同号" prop="baseInfo.合同号">
-              <el-input v-model="form.baseInfo.合同号" clearable />
+              <el-input v-model="form.baseInfo.合同号" clearable placeholder="请输入合同号" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="合同名称" prop="baseInfo.合同名称">
-              <el-input v-model="form.baseInfo.合同名称" clearable />
+              <el-input v-model="form.baseInfo.合同名称" clearable placeholder="请输入合同名称" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
@@ -28,7 +28,7 @@
           </el-col>
           <el-col :span="6">
             <el-form-item label="合同号-对方" prop="baseInfo['合同号-对方']">
-              <el-input v-model="form.baseInfo['合同号-对方']" clearable />
+              <el-input v-model="form.baseInfo['合同号-对方']" clearable placeholder="请输入合同号-对方" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
@@ -81,7 +81,7 @@
           </el-col>
           <el-col :span="6">
             <el-form-item label="签署公司" prop="baseInfo.签署公司">
-              <el-input v-model="form.baseInfo.签署公司" clearable />
+              <el-input v-model="form.baseInfo.签署公司" clearable placeholder="请输入签署公司" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
@@ -168,17 +168,23 @@
           </el-col>
           <el-col :span="6">
             <el-form-item label="上游单据号" prop="baseInfo.上游单据号">
-              <el-input v-model="form.baseInfo.上游单据号" clearable />
+              <el-input v-model="form.baseInfo.上游单据号" clearable placeholder="请输入上游单据号" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="合同版本" prop="baseInfo.合同版本">
-              <el-input v-model="form.baseInfo.合同版本" clearable />
+              <el-input v-model="form.baseInfo.合同版本" clearable placeholder="请输入合同版本" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="签署地点" prop="baseInfo.签署地点">
-              <el-input v-model="form.baseInfo.签署地点" clearable />
+              <el-input v-model="form.baseInfo.签署地点" clearable placeholder="请输入签署地点" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="24">
+            <el-form-item label="备注" prop="baseInfo.备注">
+              <el-input v-model="form.baseInfo.备注" type="textarea" :autosize="{ minRows: 2, maxRows: 10 }" show-word-limit
+                maxlength="500" clearable placeholder="请输入备注" />
             </el-form-item>
           </el-col>
         </el-row>

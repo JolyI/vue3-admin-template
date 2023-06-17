@@ -27,6 +27,7 @@ export interface FormTypeProps {
     上游单据号: string,
     合同版本: string,
     签署地点: string,
+    备注: string,
   },
   // 财务信息
   financialInfo?: {
@@ -45,7 +46,7 @@ export interface FormTypeProps {
     备注: string,
   },
   // 台账明细
-  ledgerDetails?: {
+  ledgerDetailInfo?: {
     付款条件: {
       id: number,
       款项类型: string,

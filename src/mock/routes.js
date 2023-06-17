@@ -14,6 +14,10 @@ export const adminRoutes = [
         path: 'add',
         title: '查看合同'
       },
+      {
+        path: 'list',
+        title: '合同列表'
+      },
     ]
   },
   {

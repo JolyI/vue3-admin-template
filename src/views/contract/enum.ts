@@ -7,7 +7,6 @@ interface OptionItems {
   key?: any
 }
 
-// 是/否 ，枚举
 
 
 // 套用范本
@@ -94,6 +93,18 @@ export const NatureContractOption: OptionItems[] = [
 
 // 是否我方范本
 export const OwnerModelOptions: OptionItems[] = [
+  {
+    label: '是',
+    value: '1',
+  },
+  {
+    label: '否',
+    value: '0',
+  },
+]
+
+// 是否需要付款
+export const ISNeedPaymentOptions: OptionItems[] = [
   {
     label: '是',
     value: '1',
