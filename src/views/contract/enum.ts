@@ -228,27 +228,27 @@ export const SettlementOptions: OptionItems[] = [
 export const TaxRateOptions: OptionItems[] = [
   {
     label: '增值税0%',
-    value: '1',
+    value: 1,
   },
   {
     label: '增值税13%',
-    value: '2',
+    value: 2,
   },
   {
     label: '增值税3%',
-    value: '3',
+    value: 3,
   },
   {
     label: '增值税5%',
-    value: '4',
+    value: 4,
   },
   {
     label: '增值税6%',
-    value: '5',
+    value: 5,
   },
   {
     label: '增值税9%',
-    value: '6',
+    value: 6,
   },
 ]
 // 币种
@@ -378,19 +378,19 @@ export const PaymentTypeOptions: OptionItems[] = [
 export const PaymentRatioOptions: OptionItems[] = [
   {
     label: '10%',
-    value: '10%',
+    value: 10,
   },
   {
     label: '20%',
-    value: '20%',
+    value: 20,
   },
   {
     label: '30%',
-    value: '30%',
+    value: 30,
   },
   {
     label: '40%',
-    value: '40%',
+    value: 40,
   },
 ]
 // 相对方

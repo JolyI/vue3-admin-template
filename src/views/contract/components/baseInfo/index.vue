@@ -181,6 +181,11 @@
               <el-input v-model="form.baseInfo.签署地点" clearable placeholder="请输入签署地点" />
             </el-form-item>
           </el-col>
+          <el-col :span="6">
+            <el-form-item label="动作" prop="baseInfo.动作">
+              <el-input v-model="form.baseInfo.动作" clearable placeholder="请输入动作" />
+            </el-form-item>
+          </el-col>
           <el-col :span="24">
             <el-form-item label="备注" prop="baseInfo.备注">
               <el-input v-model="form.baseInfo.备注" type="textarea" :autosize="{ minRows: 2, maxRows: 10 }" show-word-limit

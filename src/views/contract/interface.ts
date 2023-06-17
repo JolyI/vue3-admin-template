@@ -27,6 +27,7 @@ export interface FormTypeProps {
     上游单据号: string,
     合同版本: string,
     签署地点: string,
+    动作: string,
     备注: string,
   },
   // 财务信息
