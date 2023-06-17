@@ -124,6 +124,15 @@ export const asyncRoutes = [
           icon: 'icon'
         }
       },
+      {
+        path: 'billlist',
+        component: () => import('@/views/contract/BillList'),
+        name: '合同列表2',
+        meta: {
+          title: '合同列表2',
+          icon: 'icon'
+        }
+      },
     ]
   },
   {

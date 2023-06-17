@@ -71,23 +71,43 @@
         </el-row>
       </el-form>
     </div>
+
     <div class="search-table">
       <el-table :data="taleData">
-        <el-table-column width="80" label="序号" type="index" />
-        <el-table-column width="150" label="合同号" prop="合同号" />
-        <el-table-column width="150" label="合同名称" prop="合同名称" />
-        <el-table-column width="150" label="合同签订时间" prop="合同签订时间" />
-        <el-table-column width="150" label="价税合计" prop="价税合计" />
-        <el-table-column width="150" label="不含税金额" prop="不含税金额" />
-        <el-table-column width="150" label="合同状态" prop="合同状态" />
-        <el-table-column width="150" label="签章状态" prop="签章状态" />
-        <el-table-column width="150" label="合同开始日期" prop="合同开始日期" />
-        <el-table-column width="150" label="合同结束日期" prop="合同结束日期" />
-        <el-table-column width="150" label="分摊规则" prop="分摊规则" />
-        <el-table-column width="150" label="合同预算余额" prop="合同预算余额" />
-        <el-table-column width="150" label="合同性质" prop="合同性质" />
-        <el-table-column width="150" label="客商信息" prop="客商信息" />
-        <el-table-column width="150" label="操作" fixed="right">
+        <el-table-column label="序号" type="index" width="80" />
+        <el-table-column label="单位名称" prop="单位名称" width="120" />
+        <el-table-column label="费用需求部门/子公司" prop="费用需求部门/子公司" width="200" />
+        <el-table-column label="产线名称" prop="产线名称" width="120" />
+        <el-table-column label="是否公共业务（按产线分）" prop="是否公共业务（按产线分）" width="200" />
+        <el-table-column label="公共业务分摊比例（%）" prop="公共业务分摊比例（%）" width="200" />
+        <el-table-column label="动作" prop="动作" width="200" />
+        <el-table-column label=" 合同名称" prop=" 合同名称" width="200" />
+        <el-table-column label="合同编号" prop="合同编号" width="200" />
+        <el-table-column label="合同金额（含税，元）" prop="合同金额（含税，元）" width="200" />
+        <el-table-column label="合同金额（不含税，元）" prop="合同金额（不含税，元）" width="200" />
+        <el-table-column label="合同预算余额" prop="合同预算余额" width="200" />
+        <el-table-column label="合同金额计算方法" prop="合同金额计算方法" width="200" />
+        <el-table-column label="合同起始日期" prop="合同起始日期" width="200" />
+        <el-table-column label="合同终止日期" prop="合同终止日期" width="200" />
+        <el-table-column label="合同起始日期" prop="合同起始日期" width="200" />
+        <el-table-column label="供应商名称" prop="供应商名称" />
+        <el-table-column label="支付性质（是否需要付款）" prop="支付性质（是否需要付款）" width="200" />
+        <el-table-column label="当月预算金额（不含税，元）" prop="当月预算金额（不含税，元）" width="200" />
+        <el-table-column label="本年预算累计金额（不含税，元）" prop="供应商名称" width="200" />
+        <el-table-column label="内部/外部" prop="供应商名称" width="200" />
+        <el-table-column label="结算方式（计算规则）" prop="供应商名称" width="200" />
+        <el-table-column label="费用要素" prop="供应商名称" width="200" />
+        <el-table-column label="是否签订合同" prop="供应商名称" width="200" />
+        <el-table-column label="合同性质" prop="供应商名称" width="200" />
+        <el-table-column label="是否签订合同" prop="供应商名称" width="200" />
+        <el-table-column label="备注" prop="备注" width="200" />
+        <el-table-column label="挂账金额（含税，元）" prop="供应商名称" width="200" />
+        <el-table-column label="付款金额（含税，元）" prop="供应商名称" width="200" />
+        <el-table-column label="集团标准成本取数" prop="供应商名称" width="200" />
+        <el-table-column label="子公司标准成本取数" prop="供应商名称" width="200" />
+        <el-table-column label="执行成本取数" prop="供应商名称" width="200" />
+
+        <el-table-column label="操作" fixed="right">
           <template #default="{ row, $index }">
             <!-- <router-link :to="`/contract/detail?id=${row}`">
               <el-button type="danger" text @click="toDetail(row)">查看</el-button>
