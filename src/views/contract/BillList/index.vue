@@ -73,7 +73,7 @@
     </div>
 
     <div class="search-table">
-      <el-table :data="tableData">
+      <el-table v-loading="loading" :data="tableData">
         <el-table-column label="序号" type="index" width="80" />
         <el-table-column label="单位名称" prop="groups" width="120">
           <template #default="{ row }">
@@ -273,13 +273,15 @@ const data = reactive({
   pageInfo: {
     pageNum: 1,
     pageSize: 10
-  }
+  },
+  loading: false
 
 })
 const {
   tableData,
   totalItems,
-  pageInfo
+  pageInfo,
+  loading,
 } = toRefs(data)
 const toDetail = (row) => {
   router.push({

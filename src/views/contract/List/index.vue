@@ -61,6 +61,9 @@
                 <router-link to="/contract/add">
                   <el-button type="primary">新增</el-button>
                 </router-link>
+                <router-link to="/contract/billlist">
+                  <el-button type="primary">明细列表</el-button>
+                </router-link>
               </div>
               <div class="space-right">
                 <el-button type="primary" @click="onSerach()">搜索</el-button>
@@ -72,7 +75,7 @@
       </el-form>
     </div>
 
-    <div class="search-table">
+    <div v-loading="loading" class="search-table">
       <el-table :data="tableData">
         <el-table-column label="序号" type="index" width="80" />
         <el-table-column label="合同号" prop="number" width="120">
@@ -212,13 +215,16 @@ const data = reactive({
   pageInfo: {
     pageNum: 1,
     pageSize: 10
-  }
+  },
+  loading: false
 
 })
 const {
   tableData,
   totalItems,
-  pageInfo
+  pageInfo,
+  loading,
+
 } = toRefs(data)
 const onSerach = () => {
   pageInfo.value.pageNum = 1

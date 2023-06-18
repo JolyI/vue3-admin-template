@@ -828,8 +828,8 @@ const getPaymentPlanList = () => {
 }
 
 // 获取需求部门
-const getCostDeptOptions = () => {
-  queryCostDeptByNature(form.value.nature).then(res => {
+const getCostDeptOptions = (nature) => {
+  queryCostDeptByNature(nature).then(res => {
     if (res.code === 200) {
       const list = (res.rows || []).map((i) => ({ ...i, label: i.deptName, value: i.id }))
       costDeptOptions.value = list
@@ -858,6 +858,8 @@ const initEdit = () => {
         ...form.value,
         ...res.data
       }
+
+      getCostDeptOptions(res.data.nature)
     }
   })
   getPaymentPlanList()
@@ -1026,7 +1028,7 @@ watch(
   () => form.value.nature,
   (newValue) => {
     if (newValue) {
-      getCostDeptOptions()
+      getCostDeptOptions(newValue)
     }
   },
   {
