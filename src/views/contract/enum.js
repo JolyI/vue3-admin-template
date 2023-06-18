@@ -102,11 +102,11 @@ export const OwnerModelOptions = [
 export const ISNeedPaymentOptions = [
   {
     label: '是',
-    value: '1',
+    value: 1,
   },
   {
     label: '否',
-    value: '0',
+    value: 0,
   },
 ]
 
@@ -208,15 +208,15 @@ export const ContractMasterSlaveOptions = [
 export const SettlementOptions = [
   {
     label: '现金',
-    value: '1',
+    value: 1,
   },
   {
     label: '商业承兑',
-    value: '2',
+    value: 2,
   },
   {
     label: '同步财智云结算方式',
-    value: '2',
+    value: 3,
   },
 ]
 // 税率
@@ -250,27 +250,33 @@ export const TaxRateOptions = [
 export const CurrencyOptions = [
   {
     label: '人民币',
-    value: 'CNY',
+    // value: 'CNY',
+    value:1,
   },
   {
     label: '欧元',
-    value: 'EUR',
+    // value: 'EUR',
+    value:2,
   },
   {
     label: '英镑',
-    value: 'GBP',
+    // value: 'GBP',
+    value:3,
   },
   {
     label: '港币',
-    value: 'HKD',
+    // value: 'HKD',
+    value:4
   },
   {
     label: '日元',
-    value: 'JPY',
+    // value: 'JPY',
+    value:5,
   },
   {
     label: '美元',
-    value: 'USD',
+    // value: 'USD',
+    value:6
   },
 ]
 // 支付性质
@@ -321,6 +327,10 @@ export const CompanyOptions = [
     label: '石钢公司',
     value: 6,
   },
+  {
+    label: '佳华焦化',
+    value: 7,
+  },
 ]
 
 // 开票方式
@@ -338,35 +348,35 @@ export const InvoiceMethodOptions = [
 export const PaymentTypeOptions = [
   {
     label: '首付款',
-    value: '1',
+    value: 1,
   },
   {
     label: '预付款',
-    value: '2',
+    value: 2,
   },
   {
     label: '进度款',
-    value: '3',
+    value: 3,
   },
   {
     label: '结算款',
-    value: '4',
+    value: 4,
   },
   {
     label: '质保金',
-    value: '5',
+    value: 5,
   },
   {
     label: '履约保证金',
-    value: '6',
+    value: 6,
   },
   {
     label: '投标保证金',
-    value: '7',
+    value: 7,
   },
   {
     label: '押金',
-    value: '8',
+    value: 8,
   },
 ]
 // 付款比例

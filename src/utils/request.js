@@ -132,3 +132,4 @@ requestA.interceptors.response.use(
 )
 
 export { request, requestA }
+export default request
