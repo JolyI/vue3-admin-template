@@ -402,10 +402,18 @@ export const PaymentRatioOptions = [
 export const CounterpartOptions = [
   {
     label: '甲方',
-    value: '1',
+    value: 1,
   },
   {
     label: '乙方',
-    value: '2',
+    value: 2,
+  },
+  {
+    label: '丙方',
+    value: 3,
+  },
+  {
+    label: '丁方',
+    value: 4,
   },
 ]

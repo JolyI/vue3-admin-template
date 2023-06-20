@@ -43,7 +43,7 @@ export function queryContactList(data) {
  */
 export function querySupplierInfos(data) {
   return request({
-    url: '/supplierInfo/querySupplierInfos',
+    url: '/supplierInfo/queryContractSupplierResultByContractNums',
     method: 'get',
     data
   })
@@ -209,6 +209,18 @@ export function queryAllocationRuleByContractNum(data) {
 export function queryContractDetailList(data) {
   return request({
     url: '/contract/queryContractDetailList',
+    method: 'post',
+    data
+  })
+}
+/**
+ * @method uploadFile 文件上传
+ * @param {*} data
+ * @returns
+ */
+export function uploadFile(data) {
+  return request({
+    url: '/contract/uploadFile',
     method: 'post',
     data
   })

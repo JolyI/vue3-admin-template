@@ -7,12 +7,12 @@
             <el-row :gutter="15">
               <el-col :span="spanCol">
                 <el-form-item label="合同号" prop="number">
-                  <el-input v-model="form.number" clearable placeholder="请输入合同号" />
+                  <el-input :maxlength="100" v-model="form.number" clearable placeholder="请输入合同号" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同名称" prop="name">
-                  <el-input v-model="form.name" clearable placeholder="请输入合同名称" />
+                  <el-input :maxlength="100" v-model="form.name" clearable placeholder="请输入合同名称" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
@@ -30,7 +30,7 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同号-对方" prop="oppositeNumber">
-                  <el-input v-model="form.oppositeNumber" clearable placeholder="请输入合同号-对方" />
+                  <el-input :maxlength="100" v-model="form.oppositeNumber" clearable placeholder="请输入合同号-对方" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
@@ -53,8 +53,8 @@
                       :value="item.value" />
                   </el-select>
                 </el-form-item>
-                <el-form-item v-if="false" label="" prop="costDeptName"><el-input v-model="form.costDeptId" placeholder=""
-                    hidden /></el-form-item>
+                <el-form-item v-if="false" label="" prop="costDeptName"><el-input :maxlength="100"
+                    v-model="form.costDeptId" placeholder="" hidden /></el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="单据状态" prop="documentStatus">
@@ -177,28 +177,28 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="上游单据号" prop="documentNumber">
-                  <el-input v-model="form.documentNumber" clearable placeholder="请输入上游单据号" />
+                  <el-input :maxlength="100" v-model="form.documentNumber" clearable placeholder="请输入上游单据号" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同版本" prop="version">
-                  <el-input v-model="form.version" clearable placeholder="请输入合同版本" />
+                  <el-input :maxlength="100" v-model="form.version" clearable placeholder="请输入合同版本" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="签署地点" prop="signAddress">
-                  <el-input v-model="form.signAddress" clearable placeholder="请输入签署地点" />
+                  <el-input :maxlength="100" v-model="form.signAddress" clearable placeholder="请输入签署地点" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="动作" prop="action">
-                  <el-input v-model="form.action" clearable placeholder="请输入动作" />
+                  <el-input :maxlength="100" v-model="form.action" clearable placeholder="请输入动作" />
                 </el-form-item>
               </el-col>
               <el-col :span="24">
                 <el-form-item label="备注" prop="remark">
-                  <el-input v-model="form.remark" type="textarea" :autosize="{ minRows: 2, maxRows: 10 }" show-word-limit
-                    maxlength="500" clearable placeholder="请输入备注" />
+                  <el-input :maxlength="500" v-model="form.remark" type="textarea" :autosize="{ minRows: 2, maxRows: 10 }"
+                    show-word-limit clearable placeholder="请输入备注" />
                 </el-form-item>
               </el-col>
             </el-row>
@@ -211,13 +211,13 @@
             <el-row :gutter="15">
               <el-col :span="spanCol">
                 <el-form-item label="合同金额(含税)大写" prop="totalAmountChn">
-                  <el-input disabled v-model="form.totalAmountChn" clearable placeholder="自动转化大写" />
+                  <el-input :maxlength="100" disabled v-model="form.totalAmountChn" clearable placeholder="自动转化大写" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同总额(含税)" prop="totalAmount">
-                  <el-input-number precision="2" controls-position="right" v-model="form.totalAmount" clearable
-                    placeholder="请输入合同总额（含税）" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.totalAmount" clearable
+                    placeholder="请输入合同总额（含税）" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
@@ -230,14 +230,14 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="产量" prop="yield">
-                  <el-input-number precision="2" controls-position="right" v-model="form.yield" clearable
-                    placeholder="请输入产量" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.yield" clearable
+                    placeholder="请输入产量" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同总额(不含税)" prop="amount">
-                  <el-input-number precision="2" controls-position="right" v-model="form.amount" clearable
-                    placeholder="请输入合同总额（不含税）" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.amount" clearable
+                    placeholder="请输入合同总额（不含税）" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
@@ -257,14 +257,14 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="单价/吨" prop="unitPrice">
-                  <el-input-number precision="2" controls-position="right" v-model="form.unitPrice" clearable
-                    placeholder="请输入单价/吨" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.unitPrice" clearable
+                    placeholder="请输入单价/吨" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="税额" prop="taxAmount">
-                  <el-input-number precision="2" controls-position="right" v-model="form.taxAmount" clearable
-                    placeholder="请输入税额" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.taxAmount" clearable
+                    placeholder="请输入税额" />
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
@@ -285,14 +285,14 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="合同金额(产量合同)" prop="totalAmount">
-                  <el-input-number precision="2" controls-position="right" v-model="form.totalAmount" clearable
-                    placeholder="请输入合同金额(产量合同)" :min="0" />
+                  <el-input-number :min="0" precision="2" controls-position="right" v-model="form.totalAmount" clearable
+                    placeholder="请输入合同金额(产量合同)" />
                 </el-form-item>
               </el-col>
               <el-col :span="24">
                 <el-form-item label="备注" prop="financeRemark">
-                  <el-input v-model="form.financeRemark" type="textarea" :autosize="{ minRows: 2, maxRows: 10 }"
-                    show-word-limit maxlength="500" clearable placeholder="请输入备注" />
+                  <el-input :maxlength="500" v-model="form.financeRemark" type="textarea"
+                    :autosize="{ minRows: 2, maxRows: 10 }" show-word-limit clearable placeholder="请输入备注" />
                 </el-form-item>
               </el-col>
             </el-row>
@@ -323,12 +323,21 @@
                   <el-table-column label="付款时间" prop="paymentTime" width="200"></el-table-column>
                   <el-table-column label="应付金额" prop="payable"></el-table-column>
                   <el-table-column label="备注" prop="remark"></el-table-column>
+                  <el-table-column label="操作">
+                    <template #default="{ row }">
+                      <el-button type="danger" link @click="onRemove">删除</el-button>
+                    </template>
+                  </el-table-column>
                 </el-table>
               </el-tab-pane>
               <el-tab-pane label="相对方" name="supplier">
                 <el-table :data="supplierDataSource">
                   <el-table-column label="#" type="index" width="50" />
-                  <el-table-column label="相对方" prop="code"></el-table-column>
+                  <el-table-column label="相对方" prop="code">
+                    <template #default="{ row }">
+                      <span>{{ findLabel(CounterpartOptions, row.party) }}</span>
+                    </template>
+                  </el-table-column>
                   <el-table-column label="相对方名称" prop="name"></el-table-column>
                   <!-- <el-table-column label="相对方地址" prop="相对方地址"></el-table-column>
                   <el-table-column label="法定代表人" prop="法定代表人"></el-table-column>
@@ -362,7 +371,7 @@
     <!-- 付款条件 -->
     <el-dialog title="新增付款条件" v-model="paymentPlanDialog.visible">
       <el-form v-loading="paymentPlanDialog.loading" :model="paymentPlanDialog.form" ref="paymentPlanDialogformRef"
-        :rules="paymentPlanDialogRules" label-width="120">
+        :rules="paymentPlanDialogRules" label-width="120" size="large">
         <el-form-item label="款项类型" prop="paymentType">
           <el-select v-model="paymentPlanDialog.form.paymentType" placeholder="请选择款项类型">
             <el-option v-for="item in PaymentTypeOptions" :key="item.value" :label="item.label" :value="item.value" />
@@ -374,18 +383,19 @@
           </el-select>
         </el-form-item>
         <el-form-item label="付款条件" prop="paymentTerms">
-          <el-input v-model="paymentPlanDialog.form.paymentTerms" placeholder="请输入付款条件" clearable></el-input>
+          <el-input :maxlength="100" v-model="paymentPlanDialog.form.paymentTerms" placeholder="请输入付款条件"
+            clearable></el-input>
         </el-form-item>
         <el-form-item label="付款时间" prop="paymentTime">
-          <el-date-picker v-model="paymentPlanDialog.form.paymentTime" placeholder="请选择付款时间" format="YYYY-MM-DD"
-            clearable />
+          <el-date-picker v-model="paymentPlanDialog.form.paymentTime" placeholder="请选择付款时间" format="YYYY-MM-DD" clearable
+            :style="{ width: '100%' }" />
         </el-form-item>
         <el-form-item label="应付金额" prop="payable">
-          <el-input-number precision="2" controls-position="right" v-model="paymentPlanDialog.form.payable"
-            placeholder="请输入应付金额"></el-input-number>
+          <el-input-number :min="0" precision="2" controls-position="right" v-model="paymentPlanDialog.form.payable"
+            placeholder="请输入应付金额" :style="{ textAlign: 'left' }"></el-input-number>
         </el-form-item>
         <el-form-item label="备注" prop="remark">
-          <el-input v-model="paymentPlanDialog.form.remark" placeholder="请输入备注"></el-input>
+          <el-input :maxlength="100" v-model="paymentPlanDialog.form.remark" placeholder="请输入备注"></el-input>
         </el-form-item>
       </el-form>
       <template #footer>
@@ -394,12 +404,19 @@
       </template>
     </el-dialog>
     <!-- 相对方 -->
-    <el-dialog title="相对方" v-model="supplierDialog.visible" width="650" @close="onSupplierSelectClose">
+    <el-dialog title="添加相对方" v-model="supplierDialog.visible" width="650" @close="onSupplierSelectClose">
       <el-table class="supplier-dialog" ref="supplierDialogtableRef" v-loading="supplierDialog.loading"
-        :data="supplierDialog.dataSource" @select="onSupplierChange" row-key="id">
+        :data="supplierDialog.dataSource" @select="onSupplierChange" row-key="id" :max-height="'60vh'">
         <el-table-column type="selection" width="55" />
         <el-table-column label="#" type="index" width="80" />
-        <el-table-column label="相对方" prop="code"></el-table-column>
+        <el-table-column label="相对方" prop="code">
+          <template #default="{ row }">
+            <el-select v-model="row.party" placeholder="请选择相对方" size="mini">
+              <el-option v-for=" item  in  CounterpartOptions " :key="item.value" :label="item.label"
+                :value="item.value" />
+            </el-select>
+          </template>
+        </el-table-column>
         <el-table-column label="相对方名称" prop="name"></el-table-column>
         <!-- <el-table-column label="相对方地址" prop="相对方地址"></el-table-column>
         <el-table-column label="法定代表人" prop="法定代表人"></el-table-column>
@@ -416,19 +433,25 @@
       </template>
     </el-dialog>
     <el-dialog title="新增产线和明细" v-model="linesDialog.visible" @close="onLineCancel(linesDialogFormRef)">
-      <el-form v-loading="linesDialog.loading" ref="linesDialogFormRef" :model="linesNameOptions" label-width="160">
+      <el-form v-loading="linesDialog.loading" ref="linesDialogFormRef" :model="linesNameOptions" label-width="160"
+        size="large">
+        <el-form-item label="所属集团" prop="groups">
+          <el-select v-model="linesDialog.form.groups" placeholder="请选择产线名称">
+            <el-option v-for=" item  in  CompanyOptions " :key="item.value" :label="item.label" :value="item.value" />
+          </el-select>
+        </el-form-item>
         <el-form-item label="产线名称" prop="lineId">
           <el-select v-model="linesDialog.form.lineId" placeholder="请选择产线名称">
-            <el-option v-for="item in linesNameOptions" :key="item.value" :label="item.label" :value="item.value" />
+            <el-option v-for=" item  in  linesNameOptions " :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
         </el-form-item>
         <el-form-item label="公共业务分摊比例(%)" prop="ratio">
-          <el-input-number v-model="linesDialog.form.ratio" controls-position="right" placeholder="请输入公共业务分摊比例（%）"
-            precision="2"></el-input-number>
+          <el-input-number :min="0" v-model="linesDialog.form.ratio" controls-position="right"
+            placeholder="请输入公共业务分摊比例（%）" precision="2"></el-input-number>
         </el-form-item>
         <el-form-item label="费用要素" prop="elementId">
           <el-select v-model="linesDialog.form.elementId" placeholder="请选择产线名称">
-            <el-option v-for="item in feeElementOptions" :key="item.value" :label="item.label" :value="item.value" />
+            <el-option v-for=" item  in  feeElementOptions " :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
         </el-form-item>
       </el-form>
@@ -440,7 +463,7 @@
   </div>
 </template>
 <script setup  name="contract">
-import { defineComponent, reactive, toRefs, watch } from 'vue'
+import { defineComponent, reactive, toRefs, ref, unref, watch } from 'vue'
 import { ElMessage } from 'element-plus';
 import { useRoute, useRouter } from 'vue-router'
 import { formatTime, number2text, isBlank, findLabel } from '../../utils'
@@ -486,6 +509,7 @@ import {
   ISNeedPaymentOptions,
   PaymentTypeOptions,
   PaymentRatioOptions,
+  CounterpartOptions,
 
 } from '../../enum'
 
@@ -505,9 +529,9 @@ const data = reactive({
   form: {
     unionCode: null,
     id: null,
-    number: `HT${new Date().getTime()}`,
+    number: '',
     oppositeNumber: '',
-    classification: '',
+    classification: 1,
     name: '',
     documentStatus: '',
     signCompanyName: '',
@@ -515,7 +539,7 @@ const data = reactive({
     signDeptName: '',
     signDeptId: null,
     signPerson: '',
-    type: null,
+    type: 1,
     masterSlave: null,
     contractStatus: null,
     template: null,
@@ -593,6 +617,7 @@ const data = reactive({
       ratio: 0.0,
       elementName: null,
       elementId: null,
+      groups: null,
     },
   },
   feeElementData: [],
@@ -603,9 +628,9 @@ const {
   form,
   formRef,
   tabName,
+  paymentPlanDialogformRef,
   supplierDialog,
   paymentPlanDialog,
-  paymentPlanDialogformRef,
   costDeptOptions,
   supplierDialogtableRef,
   supplierDataSource,
@@ -619,6 +644,7 @@ const {
   linesDialogFormRef,
 
 } = toRefs(data)
+
 
 const onSubmit = async (formEl) => {
   formEl.validate().then((isValid) => {
@@ -696,19 +722,28 @@ const formatFields = () => {
 
 
 const addRow = () => {
-  console.log('----asad', tabName.value)
   if (tabName.value === 'paymentPlan') {
+    resetForm(paymentPlanDialogformRef.value)
     paymentPlanDialog.value.visible = true
   } else if (tabName.value === 'supplier') {
     // 弹窗
+    resetForm(supplierDialogtableRef.value)
     supplierDialog.value.visible = true
     supplierDialog.value.selectRows = [...supplierDataSource.value]
     getSupplierInfosDialog()
+
   } else if (tabName.value === 'lines') {
+    resetForm(linesDialogFormRef.value)
     linesDialog.value.loading = false
     linesDialog.value.visible = true
+    linesDialog.value.form.groups = form.value.groups
   }
 };
+
+const resetForm = (formEl) => {
+  if (!formEl) return
+  formEl.resetFields()
+}
 
 const onSubmitPaymentPlan = async (formEl) => {
   formEl.validate().then((validate) => {
@@ -740,14 +775,19 @@ const onSupplierSelectClose = () => {
   supplierDialog.value.visible = false
 }
 const onSupplierSelectOk = () => {
-  console.log(supplierDialog.value.selectRows)
   if (!supplierDialog.value.selectRows.length) {
     ElMessage.error('请选择一条数据')
     return
   }
+  const party = supplierDialog.value.selectRows?.[0].party
+  if (!party) {
+    ElMessage.error('请选择相对方')
+    return
+  }
   const params = {
     contractNum: form.value.unionCode,
-    supplierId: supplierDialog.value.selectRows?.[0].id
+    supplierId: supplierDialog.value.selectRows?.[0].id,
+    party: supplierDialog.value.selectRows?.[0].party,
   }
   addContractSupplierBinding(params).then(res => {
     if (res.code === 200) {
@@ -888,9 +928,9 @@ const getLines = () => {
   })
 }
 
-const getLinesOptions = () => {
+const getLinesOptions = (groups) => {
   const params = {
-    companyId: form.value.groups
+    companyId: groups
   }
   queryLine(params).then((res) => {
     if (res.code === 200) {
@@ -988,10 +1028,13 @@ watch(
   }
 )
 watch(
-  () => form.value.groups,
+  () => linesDialog.value.form.groups,
   (newValue) => {
     if (newValue) {
-      getLinesOptions()
+      getLinesOptions(newValue)
+      // 重置下产线名称
+      linesData.value.form.lineId = null
+      linesData.value.form.lineName = null
     } else {
       linesNameOptions.value = []
     }
@@ -1055,10 +1098,18 @@ watch(
   }
 
   .supplier-dialog {
-
-
     .el-table__header-wrapper th.el-table__cell:nth-child(1) .cell {
       visibility: hidden;
+    }
+  }
+
+  .el-input-number .el-input__inner {
+    text-align: left;
+  }
+
+  .el-dialog {
+    .el-select--large {
+      flex: 1;
     }
   }
 }
