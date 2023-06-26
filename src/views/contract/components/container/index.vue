@@ -48,13 +48,11 @@
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="费用需求部门" prop="费用需求部门">
-                  <el-select v-model="form.costDeptId" placeholder="请选择费用需求部门">
-                    <el-option v-for="item in costDeptOptions" :key="item.value" :label="item.label"
-                      :value="item.value" />
-                  </el-select>
+                  <el-cascader v-model="form.costDeptId" placeholder="请选择费用需求部门" :options="costDeptOptions"
+                    show-all-levels :props="cascaderProps" />
                 </el-form-item>
                 <el-form-item v-if="false" label="" prop="costDeptName"><el-input :maxlength="100"
-                    v-model="form.costDeptId" placeholder="" hidden /></el-form-item>
+                    v-model="form.costDeptName" placeholder="" hidden /></el-form-item>
               </el-col>
               <el-col :span="spanCol">
                 <el-form-item label="单据状态" prop="documentStatus">
@@ -524,6 +522,9 @@ const collapse = reactive({
   finanicalInfo: 'finanicalInfo',
   ledgerInfo: 'ledgerInfo',
 })
+const cascaderProps = reactive({
+  emitPath: false
+})
 const data = reactive({
   spanCol: 6,
   form: {
@@ -869,12 +870,34 @@ const getPaymentPlanList = () => {
 
 // 获取需求部门
 const getCostDeptOptions = (nature) => {
-  queryCostDeptByNature(nature).then(res => {
-    if (res.code === 200) {
-      const list = (res.rows || []).map((i) => ({ ...i, label: i.deptName, value: i.id }))
-      costDeptOptions.value = list
+  // queryCostDeptByNature(nature).then(res => {
+  //   if (res.code === 200) {
+  //     const list = (res.rows || []).map((i) => ({ ...i, label: i.deptName, value: i.id }))
+  //     costDeptOptions.value = list
+  //   }
+  // })
+
+  costDeptOptions.value = [
+    {
+      label: '1',
+      value: 1,
+      children: [
+        {
+          label: '1',
+          value: '01'
+        },
+        {
+          label: '1',
+          value: '02'
+        },
+      ]
+    },
+    {
+      label: '2',
+      value: 2,
+      children: []
     }
-  })
+  ]
 }
 // 获取unicode
 const initAddUnionCode = () => {
@@ -981,6 +1004,7 @@ const onSubmitLine = (formEl) => {
 
 getSignCompany()
 getFeeElement()
+getCostDeptOptions(1)
 
 watch(
   () => props.mode,
@@ -990,6 +1014,15 @@ watch(
     } else {
       initEdit()
     }
+  },
+  {
+    immediate: true
+  }
+)
+watch(
+  () => form.value.costDeptId,
+  (newValue) => {
+    console.log('newValue', newValue)
   },
   {
     immediate: true
