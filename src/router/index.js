@@ -145,6 +145,26 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/share',
+    component: Layout,
+    name: '分摊',
+    meta: {
+      title: '分摊',
+      icon: 'icon'
+    },
+    children:[
+      {
+        path: 'index',
+        component: () => import('@/views/share'),
+        name: '分摊',
+        meta: {
+          title: '分摊',
+          icon: 'icon'
+        }
+      },
+    ]
+  },
+  {
     path: '/clipboard',
     component: Layout,
     name: 'Clipboard',

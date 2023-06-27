@@ -25,6 +25,15 @@ export const adminRoutes = [
     ]
   },
   {
+    path: '/contract',
+    children:[
+      {
+        path:'index',
+        title:'分摊'
+      }
+    ]
+  },
+  {
     path: '/clipboard',
     children: [
       {
