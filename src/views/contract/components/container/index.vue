@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form ref="formRef" :model="form" :rules="rules" label-width="140px" size="default">
+    <el-form ref="formRef" :model="form" :rules="rules" label-width="140px" size="default" label-position="top">
       <el-collapse v-model="collapse.baseInfoNames">
         <div class="module-block">
           <el-collapse-item title="基本信息" name="baseInfo">
