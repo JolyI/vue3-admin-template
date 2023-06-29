@@ -1,0 +1,50 @@
+.module-block {
+  margin-bottom: 12px;
+  padding: 0 24px 24px 24px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.module-block-title {
+  flex: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5715;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+.space-right {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.space-left {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.space-between {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.space-start {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.search-form {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+}
+.search-table {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 15px;
+}

@@ -22,15 +22,10 @@ export const adminRoutes = [
         path: 'detaillist',
         title: '合同明细列表'
       },
-    ]
-  },
-  {
-    path: '/contract',
-    children:[
       {
-        path:'index',
-        title:'分摊'
-      }
+        path: 'fentan',
+        title: '分摊'
+      },
     ]
   },
   {

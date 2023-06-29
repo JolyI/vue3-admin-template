@@ -142,20 +142,9 @@ export const asyncRoutes = [
           icon: 'icon'
         }
       },
-    ]
-  },
-  {
-    path: '/share',
-    component: Layout,
-    name: '分摊',
-    meta: {
-      title: '分摊',
-      icon: 'icon'
-    },
-    children:[
       {
-        path: 'index',
-        component: () => import('@/views/share'),
+        path: 'fentan',
+        component: () => import('@/views/contract/Fentan'),
         name: '分摊',
         meta: {
           title: '分摊',
