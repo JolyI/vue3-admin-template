@@ -151,6 +151,15 @@ export const asyncRoutes = [
           icon: 'icon'
         }
       },
+      {
+        path: 'paymentapplydetail',
+        component: () => import('@/views/contract/PaymentApplyDetail'),
+        name: '付款详情',
+        meta: {
+          title: '付款详情',
+          icon: 'icon'
+        }
+      },
     ]
   },
   {

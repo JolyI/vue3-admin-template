@@ -26,6 +26,10 @@ export const adminRoutes = [
         path: 'fentan',
         title: '分摊'
       },
+      {
+        path: 'paymentapplydetail',
+        title: '付款详情'
+      },
     ]
   },
   {
