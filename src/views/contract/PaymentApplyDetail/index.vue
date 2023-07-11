@@ -24,7 +24,7 @@
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
-                <el-form-item label="单据日期">
+                <el-form-item label="单据日期" prop="date">
                   <el-date-picker v-model="form.date" placeholder="请选择单据日期" format="YYYY-MM-DD" clearable disabled />
                 </el-form-item>
               </el-col>
