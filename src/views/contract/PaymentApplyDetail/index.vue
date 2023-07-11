@@ -24,7 +24,7 @@
                 </el-form-item>
               </el-col>
               <el-col :span="spanCol">
-                <el-form-item label="单据日期" prop="date">
+                <el-form-item label="单据日期" prop="billsDate">
                   <el-date-picker v-model="form.date" placeholder="请选择单据日期" format="YYYY-MM-DD" clearable disabled />
                 </el-form-item>
               </el-col>
@@ -62,7 +62,7 @@
                   {{ blankText(row[column.property]) }}
                 </template>
               </el-table-column>
-              <el-table-column label="往来户" width="150" prop="supplierId">
+              <el-table-column label="往来户" width="150" prop="supplierName">
                 <template #default="{ column, row }">
                   {{ blankText(row[column.property]) }}
                 </template>
@@ -186,7 +186,7 @@ const getDetail = () => {
   tableLoading.value = true
   setTimeout(() => {
     table.value = []
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 2; i++) {
       table.value.push({
         paymentType: i, //付款类型
         supplierId: i + 1,// 往来户      supplierName:供应商名字
