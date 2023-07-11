@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form :model="shareForm" ref="shareFormRef">
-      <el-table :data="shareData">
+      <el-table :data="shareData" :key="tableKey">
         <el-table-column label="比例%">
           <template #default="{ row }">
             {{ blankText(row?.x) }}
@@ -24,23 +24,24 @@
             </el-form-item>
           </template>
         </el-table-column>
-        <!-- <el-table-column label="暂估金额(含税)">
-            <template #default="{ row, $index }">
-              <el-form-item label="" :prop="`shareForm.value.list.${$index}.currentAmountTax`" :rules="{
-                trigger: 'change',
-                validator: (rule, value, callback) => validatorAmount(callback, $index, 'currentAmountTax')
-              }">
-                <el-input type="text" v-model="row.currentAmountTax" :min="0" controls-position="right"
-                  :formatter="onFormatter" :parser="onParser" />
-              </el-form-item>
-            </template>
-          </el-table-column> -->
+        <el-table-column label="暂估金额(含税)">
+          <template #default="{ row, $index }">
+            <el-form-item label="" :prop="`shareForm.value.list.${$index}.currentAmountTax`" :rules="{
+              trigger: 'change',
+              validator: (rule, value, callback) => validatorAmount(callback, $index, 'currentAmountTax')
+            }">
+              <el-input type="text" v-model="row.currentAmountTax" :min="0" controls-position="right"
+                :formatter="onFormatter" :parser="onParser"
+                @blur="(e) => onBlur(e.target.value, $index, 'currentAmountTax')" />
+            </el-form-item>
+          </template>
+        </el-table-column>
       </el-table>
     </el-form>
   </div>
 </template>
 <script setup>
-import { toRefs } from 'vue';
+import { toRefs, ref } from 'vue';
 import { blankText, formatTime, isBlank } from '../utils';
 
 
@@ -95,25 +96,32 @@ const addThousands = (num) => {
 const onBlur = (value, index, key) => {
   let newValue = Number(value?.replace(/\$\s?|(,*)/g, '') || 0)
   if (!isNaN(Number(newValue))) {
-    newValue = Number(newValue).toFixed(2)
+    newValue = Number(newValue).toFixed(2);
+    newValue = addThousands(newValue)
   }
   const item = {
     ...shareData.value[index],
     [key]: newValue
   }
-  // shareData.value.splice(index, 1, item)
+  shareData.value.splice(index, 1, item)
   // shareData.value = []
   console.log(shareData.value)
   tableKey.value = new Date().getTime()
 }
 
 const onSaveChild = async (d) => {
-  console.log('ddd', d)
   if (!shareFormRef) return
   shareFormRef.value.validate((validate) => {
-    console.log('validate', validate)
     if (validate) {
-      console.log(shareForm.value.list)
+      const list = shareForm.value.list.map(i => {
+        const currentAmount = Number((`${i.currentAmount || 0}`).replace(/,/g, '')).toFixed(2)
+        const currentAmountTax = Number((`${i.currentAmountTax || 0}`).replace(/,/g, '')).toFixed(2)
+        return {
+          ...i,
+          currentAmount: Number(currentAmount),
+          currentAmountTax: Number(currentAmountTax),
+        }
+      })
     } else {
 
     }
@@ -130,7 +138,7 @@ const getDetail = () => {
     },
     {
       id: 983,
-      currentAmount: null,
+      currentAmount: 1212121.03094,
       currentAmountTax: null,
     },
   ]
